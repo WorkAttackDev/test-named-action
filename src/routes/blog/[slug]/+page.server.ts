@@ -1,5 +1,11 @@
-import { json } from '@sveltejs/kit';
 import type { Actions } from './$types';
+
+export const config = {
+    isr: {
+        expiration: 1800, // 30 minutes
+        allowQuery: ["slug"],
+    },
+};
 
 export const actions = {
     comment: async (event) => {
